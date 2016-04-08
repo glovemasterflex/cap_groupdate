@@ -17,6 +17,7 @@ gem 'rails_12factor'
 gem 'react-rails'
 
 group :test do
+  # Karson/Danny Added
   gem 'database_cleaner'
   gem 'shoulda-matchers'
   gem 'factory_girl_rails' 
