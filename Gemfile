@@ -15,6 +15,7 @@ gem 'paperclip'
 gem 'puma' 
 gem 'rails_12factor'
 gem 'react-rails'
+gem 'omniauth-facebook'
 
 group :test do
   # Karson/Danny Added
