@@ -7,10 +7,57 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+  <div class="light-blue lighten-5">
+    
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper amber">
+          <a href="#!" class="center brand-logo">ʕ•ᴥ•ʔ</a>
+          <ul class="right hide-on-med-and-down">
+          <% if user_signed_in? %>
+            <li><a href="#!">Logout</a></li>
+          <% else %>
+            <li><a href="#!">Login</a></li>
+            <li><a href="#!">Sign Up</a></li>
+          <% end %>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
 
-<%= yield %>
+    <div class="center container z-depth-2">
+      <%= yield %>
+    </div>
+
+    <footer class="page-footer amber">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Footer Content</h5>
+            <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Links</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+        © 2014 Copyright Text
+        <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+              
 
 </body>
 </html>
