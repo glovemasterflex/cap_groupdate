@@ -1,3 +1,26 @@
 .main-background {
 	background-color: white;
 }
+// .page-wrap {
+//   min-height: 100%;
+//   /* equal to footer height */
+//   margin-bottom: -50px;
+// }
+// .page-wrap:after {
+//   content: "";
+//   display: block;
+// }
+// footer, .page-wrap:after {
+//   height: 50px;
+// }
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+main {
+  flex: 1 0 auto;
+}
+.lobster-font, h1 {
+    font-family: 'Pacifico';
+  }

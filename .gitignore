@@ -11,3 +11,4 @@
 /log/*
 !/log/.keep
 /tmp
+/config/facebook_omniauth_creds.yml

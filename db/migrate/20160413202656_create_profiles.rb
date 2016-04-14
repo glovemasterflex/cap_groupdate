@@ -1,0 +1,17 @@
+class CreateProfiles < ActiveRecord::Migration
+  def change
+    create_table :profiles do |t|
+      t.string :first_name_one, null: false 
+      t.string :last_name_one, null: false
+      t.string :first_name_two, null: false
+      t.string :last_name_two, null: false
+      t.string :location
+      t.string :age_one
+      t.string :age_two
+      t.string :hobbies
+      t.belongs_to :user
+
+      t.timestamps null: false
+    end
+  end
+end
