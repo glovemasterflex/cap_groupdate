@@ -40,7 +40,7 @@ class Profiles extends React.Component{
     });
   }
 
-  addProfile(profile) {
+  addProfile(user_id) {
     this.setState({ profiles: [profile, ...this.state.profiles]});
   }
 

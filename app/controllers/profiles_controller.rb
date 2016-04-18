@@ -8,11 +8,12 @@ class ProfilesController < ApplicationController
 
   def new
   	@profile = Profile.new
+    @user_id = current_user.id
   end
 
   def create
   	@profile = Profile.new(profile_params)
-    if @proifle.save
+    if @profile.save
       render json: profile
     else
       render json: { errors: profile.errors.full_messages }
