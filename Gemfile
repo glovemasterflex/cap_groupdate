@@ -16,6 +16,8 @@ gem 'puma'
 gem 'rails_12factor'
 gem 'react-rails'
 gem 'omniauth-facebook'
+gem "sprockets"
+gem "sprockets-es6"
 
 group :test do
   # Karson/Danny Added

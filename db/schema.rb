@@ -21,10 +21,10 @@ ActiveRecord::Schema.define(version: 20160413202656) do
     t.string   "last_name_one",  null: false
     t.string   "first_name_two", null: false
     t.string   "last_name_two",  null: false
-    t.string   "location"
-    t.string   "age_one"
-    t.string   "age_two"
-    t.string   "hobbies"
+    t.string   "location",       null: false
+    t.string   "age_one",        null: false
+    t.string   "age_two",        null: false
+    t.string   "hobbies",        null: false
     t.integer  "user_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false

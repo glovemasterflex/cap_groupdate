@@ -8,7 +8,7 @@ class Profile extends React.Component {
   }
 
   showProfile() {
-    window.location.href = `/profile/${this.props.id}/lists`;
+    window.location.href = `/profile/${this.props.id}`;
   }
 
   toggleEdit() {

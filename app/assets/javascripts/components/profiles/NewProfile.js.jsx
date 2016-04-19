@@ -6,25 +6,25 @@ class NewProfile extends React.Component {
 
   addProfile(e) {
     e.preventDefault();
-    let user_id = this.props.current_user;
-    let first_name_one = this.refs.first_name_one;
-    let last_name_one = this.refs.last_name_one;
-    let first_name_two = this.refs.first_name_two;
-    let last_name_two = this.refs.last_name_two;
-    let age_one = this.refs.age_one;
-    let age_two = this.refs.age_two;
-    let hobbies = this.refs.hobbies;
-    let location = this.refs.location;
+    let user_id = this.props.user_id;
+    let first_name_one = this.refs.first_name_one.value;
+    let last_name_one = this.refs.last_name_one.value;
+    let first_name_two = this.refs.first_name_two.value;
+    let last_name_two = this.refs.last_name_two.value;
+    let age_one = this.refs.age_one.value;
+    let age_two = this.refs.age_two.value;
+    let hobbies = this.refs.hobbies.value;
+    let location = this.refs.location.value;
     $.ajax({
       url: `/users/${user_id}/profiles`,
       type: 'POST',
-      data: { profile: {first_name_one: first_name_one.value, last_name_one: last_name_one.value, 
-                        first_name_two: first_name_two.value, last_name_two: last_name_two.value, 
-                        age_one: age_one.value, age_two: age_two.value, 
-                        hobbies: hobbies.value, location: location.value } },
+      data: { profile: {first_name_one: first_name_one, last_name_one: last_name_one, 
+                        first_name_two: first_name_two, last_name_two: last_name_two, 
+                        age_one: age_one, age_two: age_two, 
+                        hobbies: hobbies, location: location} },
       dataType: 'JSON',
-    }).success( user_id => {
-      this.props.addProfile(user_id);
+    }).success( profile => {
+      window.location = "/users";
     }).error( errors => {
       alert(errors)
     }).complete( () => {
