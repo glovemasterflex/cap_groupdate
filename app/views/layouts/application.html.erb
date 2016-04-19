@@ -9,7 +9,7 @@
 </head>
 <body class="light-blue lighten-5"> 
     <div class="navbar-fixed">
-      <nav>
+      <nav id="nav-fix">
         <div class="nav-wrapper amber">
           <a href="/" class="center brand-logo lobster-font">Double ʕ•ᴥ•ʔ Date</a>
           <ul class="right hide-on-med-and-down">
@@ -24,17 +24,17 @@
       </nav>
     </div>
     <div class="center container">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+      <!-- <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p> -->
     </div>
 
     <main>
-      <div class="center container z-depth-2">
+      <!-- <div class="center container z-depth-2"> -->
         <%= yield %>
-      </div>
+      <!-- </div> -->
     </main>
 
-    <footer class="page-footer amber">
+    <footer class="page-footer amber" id="footer-fixed">
       <div class="container">
         <div class="row">
           <div class="col l6 s12">

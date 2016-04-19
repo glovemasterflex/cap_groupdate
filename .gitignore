@@ -11,9 +11,6 @@
 /log/*
 !/log/.keep
 /tmp
-<<<<<<< HEAD
-/config/facebook_omniauth_creds.yml
-=======
+
 /config/facebook_omniauth_creds.yml
 /coverage
->>>>>>> glover
