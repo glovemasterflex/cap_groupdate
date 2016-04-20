@@ -40,7 +40,7 @@ class Profiles extends React.Component{
     });
   }
 
-  addProfile(profile) {
+  addProfile(user_id) {
     this.setState({ profiles: [profile, ...this.state.profiles]});
   }
 
@@ -50,7 +50,6 @@ class Profiles extends React.Component{
     });
     return(
       <div className="row">
-        <NewProfile addProfile={this.addProfile} />
         <h2 className="center">Poopoo</h2>
         {profiles}
       </div>
