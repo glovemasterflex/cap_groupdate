@@ -1,2 +1,6 @@
-<h1>Profiles#show</h1>
-<p>Find me in app/views/profiles/show.html.erb</p>
+<div class="center container z-depth-2 main-background">
+	<h1 class="lobster-font amber-text lighten-2 "><%= current_user.profile.first_name_one %> & <%= current_user.profile.first_name_two %>'s profile</h1>
+	<img src="<%= current_user.profile.picture %>" height="100" width="100" class="user">
+	<hr/>
+
+</div>

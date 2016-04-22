@@ -24,6 +24,7 @@ class Profiles extends React.Component{
       editProfile.age_two = profile.age_two;
       editProfile.hobbies = profile.hobbies;
       editProfile.location = profile.location;
+      editProfile.picture = profile.picture
       setState({ profiles: profiles });
     });
   }
