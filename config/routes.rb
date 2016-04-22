@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   end
 
   # Custom GET
-
+  get "/about", to: "home#about", as: "about"
   # Custom PUT
 
   # Custom POST

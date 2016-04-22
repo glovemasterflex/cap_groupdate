@@ -15,18 +15,12 @@
           <ul class="right hide-on-med-and-down">
           <% if user_signed_in? %>
             <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
-            <!-- <div> -->
-           <!--    <div class="user">
-                <img src="<%= current_user.profile.picture %>">
-              </div> -->
-                <a class='dropdown-button ' href='#' data-activates='dropdown1'><%= current_user.profile.first_name_one %> & <%= current_user.profile.first_name_two %></a>
+                <li><img class="user-nav" src="<%= current_user.profile.picture %>"></li>
+                <li>  <a class='dropdown-button ' href='#' data-activates='dropdown1'><%= current_user.profile.first_name_one %> & <%= current_user.profile.first_name_two %></a></li>
                 <ul id='dropdown1' class='dropdown-content'>
                   <li><%= link_to Profile, user_profile_path(:user_id, :id) %></li>
-                  <li><a href="#!">About</a></li>
                   <li><a href="#!">Dates</a></li>
                 </ul>
-            <!-- </div> -->
-                  
           <% else %>
             <li> <%= link_to 'Login', new_user_session_path %></li>
             <li> <%= link_to 'Sign Up', new_user_registration_path %></li>
@@ -37,11 +31,9 @@
     </div>
     <div class="center container">
     </div>
-
     <main>
         <%= yield %>
     </main>
-
     <footer class="page-footer amber" id="footer-fixed">
       <div class="container">
         <div class="row">
@@ -55,7 +47,7 @@
               <li><a class="grey-text text-lighten-3" href="#!">New Date</a></li>
               <li><a class="grey-text text-lighten-3" href="#!">Find Friends</a></li>
               <li><a class="grey-text text-lighten-3" href="#!">Add Interests</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">About</a></li>
+              <li><%= link_to 'About', about_path, class:'grey-text text-lighten-3'%></li>
             </ul>
           </div>
         </div>
