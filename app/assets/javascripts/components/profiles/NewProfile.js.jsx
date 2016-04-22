@@ -27,7 +27,7 @@ class NewProfile extends React.Component {
                         hobbies: hobbies, location: location, picture: picture} },
       dataType: 'JSON',
     }).success( profile => {
-      window.location = `/users/${user_id}`;
+      window.location = `/users/${user_id}/profiles/${id}`;
     }).error( errors => {
       alert(errors)
     }).complete( () => {
