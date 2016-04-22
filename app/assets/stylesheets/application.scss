@@ -1,5 +1,4 @@
 @import "materialize";
-@import "home.scss";
 
 .user {
   display: inline-block;
@@ -10,3 +9,6 @@
   background-position: center center;
   background-size: cover;
 }
+
+@import "home";
+@import "users";

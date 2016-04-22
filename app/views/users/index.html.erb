@@ -1,0 +1,28 @@
+<div class='container'>
+  <div class="row">
+    <% @profile.each do |p| %>
+    <div class="col s10 m5">
+      <div class="card" style='overflow: hidden;'>
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" src="https://scontent-sjc2-1.xx.fbcdn.net/hphotos-xat1/t31.0-8/12973555_149722455425359_8720487056401286565_o.jpg">
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4"><%= p.first_name_one %> & <%= p.first_name_two %><i class="material-icons right">&#8942;</i></span>
+          <p><a href="#">Contact</a></p>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4"><%= p.first_name_one %> & <%= p.first_name_two %><i class="material-icons right">&#215;</i></span>
+          <p><%= "Ages #{p.age_one} and #{p.age_two}" %>
+              <hr />
+              <br />
+              <%= "Hobbies and interests include #{p.hobbies.downcase}" %>
+              <hr />
+              <br />
+              <%= "Located in: #{p.location}" %></p>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+>>>>>>> got users index finalized, only changes needed for mailing option
