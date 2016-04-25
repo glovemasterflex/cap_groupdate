@@ -23,11 +23,11 @@
             <% if current_user.profile %>
             <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
             <li><img class="user-nav" src="<%= current_user.profile.picture %>"></li>
-            <li><a class='dropdown-button ' href='#' data-activates='dropdown1'><%= current_user.profile.first_name_one %> & <%= current_user.profile.first_name_two %></a></li>
-            <ul id='dropdown1' class='dropdown-content'>
-              <li><%= link_to Profile, user_profile_path(:user_id, :id) %></li>
-              <li><a href="#!">Dates</a></li>
-            </ul>
+            <li><a class='dropdown-button' data-activates='dropdown1'><%= current_user.profile.first_name_one %> & <%= current_user.profile.first_name_two %></a></li>
+              <ul id='dropdown1' class='dropdown-content'>
+                <li><%= link_to Profile, user_profile_path(:user_id, :id) %></li>
+                <li><a href="#!">Conversations</a></li>
+              </ul>
             <% end %>
           <% else %>
             <li> <%= link_to 'Login', new_user_session_path %></li>
@@ -40,11 +40,11 @@
             <% if user_signed_in? %>
               <% if current_user.profile %>
               <li><img class="user-side-nav" src="<%= current_user.profile.picture %>"></li>
-              <li><a class='dropdown-button ' href='#' data-activates='dropdown1'><%= current_user.profile.first_name_one %> 
+              <li><a class='dropdown-button ' href='#' data-activates='dropdown2'><%= current_user.profile.first_name_one %> 
                   & <%= current_user.profile.first_name_two %></a></li>
-              <ul id='dropdown1' class='dropdown-content'>
+              <ul id='dropdown2' class='dropdown-content'>
                 <li><%= link_to Profile, user_profile_path(:user_id, :id) %></li>
-                <li><a href="#!">Dates</a></li>
+                <li><a href="#!">Conversations</a></li>
               </ul>
               <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
               <% end %>
