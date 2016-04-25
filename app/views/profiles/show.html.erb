@@ -1,6 +1,21 @@
 <div class="center container z-depth-2 main-background">
 	<h1 class="lobster-font amber-text lighten-2 "><%= current_user.profile.first_name_one %> & <%= current_user.profile.first_name_two %>'s profile</h1>
 	<img src="<%= current_user.profile.picture %>" height="100" width="100" class="user">
-	<hr/>
+	
+	<div class="divider"></div>
+  <div class="section">
+    <h5>Your Names</h5>
+    <p><%= current_user.profile.first_name_one %> <%= current_user.profile.last_name_one %> (<%= current_user.profile.age_one %>) & <%= current_user.profile.first_name_two %> <%= current_user.profile.last_name_two %> (<%= current_user.profile.age_two %>)</p>
+  </div>
+  <div class="divider"></div>
+  <div class="section">
+    <h5>Interests/Hobbies</h5>
+    <p><%= current_user.profile.hobbies %></p>
+  </div>
+  <div class="divider"></div>
+  <div class="section">
+    <h5>Location</h5>
+    <p><%= current_user.profile.location %></p>
+  </div>
 
 </div>
