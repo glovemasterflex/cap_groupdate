@@ -57,32 +57,41 @@
     </nav>
   </div>
     <main>
-        <%= yield %>
+      <%= yield %>
     </main>
-    <footer class="page-footer amber" id="footer-fixed">
+
+    <!-- Sticky footer  -->
+  <footer class="page-footer amber" id="footer-fixed">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Contact Us!</h5>
+          <p class="grey-text text-lighten-4 lobster-font">Karson Hatch</p>
+            <a href="https://www.facebook.com/the.man.from.japan"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+            <a href="https://www.linkedin.com/in/karsonhatch"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+            <a href="https://github.com/karsonhatch"><i class="fa fa-github" aria-hidden="true"></i></a>
+          <p class="grey-text text-lighten-4 lobster-font">Daniel Glover</p>
+            <a href="https://www.facebook.com/glovemasterflex"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+            <a href="https://www.linkedin.com/in/danieltheglover"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+            <a href="https://github.com/glovemasterflex"><i class="fa fa-github" aria-hidden="true"></i></a>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Useful Links</h5>
+          <ul>
+            <li><%= link_to 'Conversations', conversations_path, class:'grey-text text-lighten-3' %></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Find Friends</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Edit Profile</a></li>
+            <li><%= link_to 'About', about_path, class:'grey-text text-lighten-3'%></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
       <div class="container">
-        <div class="row">
-          <div class="col l6 s12">
-            <h5 class="white-text"></h5>
-            <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-          </div>
-          <div class="col l4 offset-l2 s12">
-            <h5 class="white-text">Useful Links</h5>
-            <ul>
-              <li><a class="grey-text text-lighten-3" href="#!">New Date</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Find Friends</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Add Interests</a></li>
-              <li><%= link_to 'About', about_path, class:'grey-text text-lighten-3'%></li>
-            </ul>
-          </div>
-        </div>
+      © 2016 Copyright Karson Hatch & Danny Glover
+      <a class="grey-text text-lighten-4 right" href="http://www.DevPointlabs.com">Made possible by the dope homies at DevPoint Labs. Click here to learn more!</a>
       </div>
-      <div class="footer-copyright">
-        <div class="container">
-        © 2016 Copyright Karson Hatch & Danny Glover
-        <a class="grey-text text-lighten-4 right" href="http://www.DevPointlabs.com">Made possible by the dope homies at DevPoint Labs. Click here to learn more!</a>
-        </div>
-      </div>
-    </footer>
+    </div>
+  </footer>
 </body>
 </html>
