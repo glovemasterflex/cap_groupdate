@@ -17,4 +17,11 @@ class ConversationsController < ApplicationController
     redirect_to conversation_path(receipt.conversation)
   end
 
+  def destroy
+    @conversation = current_user.mailbox.conversations.find(params[:id])
+    conversation.destroy
+
+    redirect_to conversations_path
+  end
+
 end

@@ -2,8 +2,8 @@
 
 <% @conversation.receipts_for(current_user).each do |receipt| %>
   <div>
-    <div><%= receipt.message.sender.name %> commented:</div>
-    <p><%= receipt.message.body %></p>
+    <h5 class='bold'><%= receipt.message.sender.name %> said:</h5>
+    <blockquote><%= receipt.message.body %></blockquote>
   </div>
 <% end %>
 

@@ -35,7 +35,7 @@ class ProfilesController < ApplicationController
     end
   end
 
-  def product_search
+  def profile_search
     term = "%#{params[:term].downcase}%"
     @profiles = Profile.where("lower(profiles.first_name_one) LIKE ? OR
                               lower(profiles.first_name_two) LIKE ? OR

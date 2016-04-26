@@ -8,20 +8,13 @@
   <link href='https://fonts.googleapis.com/css?family=Lobster|Pacifico' rel='stylesheet' type='text/css'>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
 </head>
+
 <body class="light-blue lighten-5"> 
-<<<<<<< HEAD
-    <div class="navbar-fixed">
-      <nav id="nav-fix">
-        <div class="nav-wrapper amber">
-          <a href="/users" class="center brand-logo lobster-font">Double ʕ•ᴥ•ʔ Date</a>
-          <ul class="right hide-on-med-and-down">
-=======
   <div class="navbar-fixed">
     <nav id="nav-fix">
       <div class="nav-wrapper amber">
-        <a href="/" class="center brand-logo lobster-font">Double ʕ•ᴥ•ʔ Date</a>
+        <a href="/users" class="center brand-logo lobster-font">Double ʕ•ᴥ•ʔ Date</a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 
         <!-- Main Navbar -->
@@ -33,7 +26,7 @@
             <li><a class='dropdown-button' data-activates='dropdown1'><%= current_user.profile.first_name_one %> & <%= current_user.profile.first_name_two %></a></li>
               <ul id='dropdown1' class='dropdown-content'>
                 <li><%= link_to Profile, user_profile_path(:user_id, :id) %></li>
-                <li><a href="#!">Conversations</a></li>
+                <li><a href="/conversations">Conversations</a></li>
               </ul>
             <% end %>
           <% else %>
@@ -51,7 +44,7 @@
                   & <%= current_user.profile.first_name_two %></a></li>
               <ul id='dropdown2' class='dropdown-content'>
                 <li><%= link_to Profile, user_profile_path(:user_id, :id) %></li>
-                <li><a href="#!">Conversations</a></li>
+                <li><a href="/conversations">Conversations</a></li>
               </ul>
               <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
               <% end %>
