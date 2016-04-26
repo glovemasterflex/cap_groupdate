@@ -35,6 +35,20 @@ class ProfilesController < ApplicationController
     end
   end
 
+  def profile_search
+    term = "%#{params[:term].downcase}%"
+    @profiles = Profile.where("lower(profiles.first_name_one) LIKE ? OR
+                              lower(profiles.first_name_two) LIKE ? OR
+                              lower(profiles.last_name_one) LIKE ? OR
+                              lower(profiles.last_name_two) LIKE ? OR
+                              lower(profiles.age_one) LIKE ? OR
+                              lower(profiles.age_two) LIKE ? OR
+                              lower(profiles.hobbies) LIKE ? OR
+                              lower(profiles.location) LIKE ?",
+                              term, term )
+    render json: @profiles
+  end
+
   private
   	def profile
       @profile = current_user.profile

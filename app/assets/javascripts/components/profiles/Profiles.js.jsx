@@ -1,58 +1,47 @@
-class Profiles extends React.Component{
+class Profiles extends React.Component {
   constructor(props) {
     super(props);
     this.state = { profiles: this.props.profiles };
-    this.addProfile = this.addProfile.bind(this);
-    this.deleteProfile = this.deleteProfile.bind(this);
-    this.updateProfile = this.updateProfile.bind(this);
+    this.profileSearch = this.profileSearch.bind(this);
+    this.searchProfile = this.searchProfile.bind(this);
   }
 
-  updateProfile(id, profile) {
+  searchProfile() {
     $.ajax({
-      url: `/profile/${id}`,
-      type: 'PUT',
-      data: { profile: {...profile}},
-      dataType: 'JSON'
-    }).success( profile => {
-      let profiles = this.state.profiles;
-      let editProfile = profiles.find( p => p.id === profile.id)
-      editProfile.first_name_one = profile.first_name_one;
-      editProfile.last_name_one = profile.last_name_one;
-      editProfile.first_name_two = profile.first_name_two;
-      editProfile.last_name_two = profile.last_name_two;
-      editProfile.age_one = profile.age_one;
-      editProfile.age_two = profile.age_two;
-      editProfile.hobbies = profile.hobbies;
-      editProfile.location = profile.location;
-      editProfile.picture = profile.picture
-      setState({ profiles: profiles });
+      url: '/profiles/profile_search',
+      type: 'GET',
+      data: {term: this.refs.search.value}
+    }).done( data => {
+      this.setState({ profiles: data });
+    }).fail( error => {
+      console.log(error);
     });
   }
 
-  deleteProfile(id) {
-    $.ajax({
-      url: `/profiles/${id}`,
-      type: 'DELETE'
-    }).success( profile => {
-      let profiles = this.state.profiles;
-      let index = profiles.findIndex( p => p.id === profile.id);
-      profiles.splice(index, 1)
-      this.setState({ profiles: profiles });
-    });
-  }
-
-  addProfile(user_id) {
-    this.setState({ profiles: [profile, ...this.state.profiles]});
+  profileSearch() {
+    return(<div className="col s12 m4">
+             <h5>Search</h5>
+             <input onKeyUp={this.searchProfile} ref="search" type="text" placeholder="Search Profiles by Names, Ages, Interests, or Location" />
+           </div>
+    );
   }
 
   render() {
-    let profiles = this.state.profiles.map( profile => {
-      return(<Profile key={`profile-${profile.id}`} {...profile} delete={this.deleteProfile} updateProfile={this.updateProfile} />);
+    let profile = this.state.profile.map( profile => {
+      return(<Profile key={`profile-${profile.id}`} {...profile} />);
     });
     return(
-      <div className="row">
-        <h2 className="center">Poopoo</h2>
-        {profiles}
+      <div className="col s12 m4">
+        <div className="row">
+          <div className="col s12 m4 offset-m1">
+            <h1 className="center">Profiles</h1>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col s12 m8 offset-m2">
+          {this.profileSearch()}
+          </div>
+        </div>
       </div>
     );
   }
