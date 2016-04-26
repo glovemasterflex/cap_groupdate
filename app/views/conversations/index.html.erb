@@ -1,0 +1,20 @@
+<div class='container'>
+  <div class='center'>
+    <h1>All Conversations</h1>
+  </div>
+    <%= link_to "New Conversation", new_conversation_path, class: 'btn light-blue accent-4' %>
+<table>
+  <thead>
+    <tr>
+      <th data-field="name">Subject</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @conversations.each do |conversation| %>
+      <tr>
+        <td><%= link_to conversation.subject, conversation_path(conversation) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,26 +1,24 @@
 <div class='container'>
   <div class="row">
     <% @profiles.each do |p| %>
-    <div class="col s6 m3">
-      <div class="card medium">
+    <div class="col s10 m5">
+      <div class="card" style='overflow: hidden;'>
         <div class="card-image waves-effect waves-block waves-light">
           <%= image_tag("#{p.picture}", class: "activator") %>
         </div>
         <div class="card-content">
           <span class="card-title activator grey-text text-darken-4"><%= p.first_name_one %> & <%= p.first_name_two %><i class="material-icons right">&#8942;</i></span>
-          <p><a href="/conversations/new">Contact</a></p>
+          <p><a href="#">Contact</a></p>
         </div>
         <div class="card-reveal">
           <span class="card-title grey-text text-darken-4"><%= p.first_name_one %> & <%= p.first_name_two %><i class="material-icons right">&#215;</i></span>
-          <p>
-            <%= "Ages #{p.age_one} and #{p.age_two}" %>
-            <hr />
-            <br />
-            <%= "Hobbies and interests include #{p.hobbies.downcase}" %>
-            <hr />
-            <br />
-            <%= "Located in: #{p.location}" %>
-          </p>
+          <p><%= "Ages #{p.age_one} and #{p.age_two}" %>
+              <hr />
+              <br />
+              <%= "Hobbies and interests include #{p.hobbies.downcase}" %>
+              <hr />
+              <br />
+              <%= "Located in: #{p.location}" %></p>
         </div>
       </div>
     </div>

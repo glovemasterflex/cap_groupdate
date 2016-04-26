@@ -17,7 +17,8 @@ gem 'rails_12factor'
 gem 'react-rails'
 gem 'omniauth-facebook'
 gem "sprockets"
-gem "sprockets-es6"
+gem 'sprockets-es6'
+gem 'mailboxer', github: 'mailboxer/mailboxer'
 
 group :test do
   # Karson/Danny Added
