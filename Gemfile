@@ -19,6 +19,7 @@ gem 'omniauth-facebook'
 gem "sprockets"
 gem 'sprockets-es6'
 gem 'mailboxer', github: 'mailboxer/mailboxer'
+gem "font-awesome-rails"
 
 group :test do
   # Karson/Danny Added
