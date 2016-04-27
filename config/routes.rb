@@ -15,7 +15,6 @@ Rails.application.routes.draw do
 
   # Custom GET
   get "/about", to: "home#about", as: "about"
-  get '/profiles/profile_search', to: 'profiles#profile_search'
 
   # Custom PUT
 

@@ -18,4 +18,6 @@
     <p><%= current_user.profile.location %></p>
   </div>
 
+  <% link_to "Delete Account?", destroy_user_path(:id), method: :delete %>
+
 </div>
