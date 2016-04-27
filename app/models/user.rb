@@ -23,7 +23,11 @@ class User < ActiveRecord::Base
   end
 
   def name
-    "#{profile.first_name_one} & #{profile.first_name_two}"
+    if self.profile
+      "#{profile.first_name_one} & #{profile.first_name_two}"
+    else
+      "#{self.email}"
+    end
   end
 
   def mailboxer_email(object)
