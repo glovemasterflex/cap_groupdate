@@ -7,7 +7,7 @@ class NewProfile extends React.Component {
   addProfile(e) {
     e.preventDefault();
     let user_id = this.props.user_id;
-    let id = this.props.id;
+    let id = this.props.profile.id;
     let first_name_one = this.refs.first_name_one.value;
     let last_name_one = this.refs.last_name_one.value;
     let first_name_two = this.refs.first_name_two.value;
@@ -28,6 +28,7 @@ class NewProfile extends React.Component {
       dataType: 'JSON',
     }).success( profile => {
       window.location = `/users/${user_id}/profiles/${id}`;
+      debugger
     }).error( errors => {
       alert(errors)
     }).complete( () => {
