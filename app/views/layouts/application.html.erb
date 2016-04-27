@@ -19,7 +19,7 @@
         <a href="/users" class="center brand-logo lobster-font">Double ʕ•ᴥ•ʔ Date</a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 
-        <!-- Main Navbar -->
+        <!-- Main Navbar make sure that any changes you make here you also make them in the Mobile Nav-->
         <ul class="right hide-on-med-and-down">
           <% if user_signed_in? %>
             <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
