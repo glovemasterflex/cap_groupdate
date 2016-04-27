@@ -27,6 +27,7 @@
               <ul id='dropdown1' class='dropdown-content'>
                 <li><%= link_to Profile, user_profile_path(:user_id, :id) %></li>
                 <li><a href="/conversations">Conversations</a></li>
+                <li><a href="/">Friends</a></li>
               </ul>
             <% end %>
           <% else %>
@@ -45,6 +46,7 @@
               <ul id='dropdown2' class='dropdown-content'>
                 <li><%= link_to Profile, user_profile_path(:user_id, :id) %></li>
                 <li><a href="/conversations">Conversations</a></li>
+                <li><a href="/">Friends</a></li>
               </ul>
               <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
               <% end %>
@@ -79,7 +81,7 @@
           <h5 class="white-text">Useful Links</h5>
           <ul>
             <li><%= link_to 'Conversations', conversations_path, class:'grey-text text-lighten-3' %></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Find Friends</a></li>
+            <li><a class="grey-text text-lighten-3" href="/users">Find Friends</a></li>
             <li><a class="grey-text text-lighten-3" href="#!">Edit Profile</a></li>
             <li><%= link_to 'About', about_path, class:'grey-text text-lighten-3'%></li>
           </ul>
