@@ -25,7 +25,7 @@
             <li><img class="user-nav" src="<%= current_user.profile.picture %>"></li>
             <li><a class='dropdown-button' data-activates='dropdown1'><%= current_user.profile.first_name_one %> & <%= current_user.profile.first_name_two %></a></li>
               <ul id='dropdown1' class='dropdown-content'>
-                <li><%= link_to Profile, user_profile_path(:user_id, :id) %></li>
+                <li><%= link_to "Profile", user_profile_path(current_user.id, current_user.profile.id) %></li>
                 <li><a href="/conversations">Conversations</a></li>
                 <li><a href="/">Friends</a></li>
               </ul>
@@ -91,7 +91,7 @@
     <div class="footer-copyright">
       <div class="container">
       © 2016 Copyright Karson Hatch & Danny Glover
-      <a class="grey-text text-lighten-4 right" href="http://www.DevPointlabs.com">Made possible by the dope homies at DevPoint Labs. Click here to learn more!</a>
+      <a target='_blank' class="grey-text text-lighten-4 right" href="http://www.DevPointlabs.com">Made possible by the dope homies at DevPoint Labs. Click here to learn more!</a>
       </div>
     </div>
   </footer>
