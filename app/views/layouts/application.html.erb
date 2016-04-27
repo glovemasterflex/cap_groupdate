@@ -84,7 +84,7 @@
           <ul>
             <li><%= link_to 'Conversations', conversations_path, class:'grey-text text-lighten-3' %></li>
             <li><a class="grey-text text-lighten-3" href="/users">Find Friends</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Edit Profile</a></li>
+            <li><%= link_to "Profile", user_profile_path(:user_id, :id), class:"grey-text text-lighten-3" %></li>
             <li><%= link_to 'About', about_path, class:'grey-text text-lighten-3'%></li>
           </ul>
         </div>

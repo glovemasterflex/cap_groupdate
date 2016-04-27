@@ -1,21 +1,22 @@
-<div class='container'>
-  <div class='center'>
+<div class='container main-background z-depth-2'>
+  <div class="container center">
     <h1>All Conversations</h1>
-  </div>
-    <%= link_to "New Conversation", new_conversation_path, class: 'btn light-blue accent-4' %>
-<table>
-  <thead>
-    <tr>
-      <th data-field="name">Subject</th>
-      <th data-field="name">Delete?</th>
-    </tr>
-  </thead>
+      <%= link_to "New Conversation", new_conversation_path, class: 'btn light-blue accent-4' %>
+    <table>
+      <thead>
+        <tr>
+          <th data-field="name">Subject</th>
+          <th data-field="name">Delete?</th>
+        </tr>
+      </thead>
 
-  <tbody>
-    <% @conversations.each do |conversation| %>
-      <tr>
-        <td><%= link_to conversation.subject, conversation_path(conversation) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <tbody>
+        <% @conversations.each do |conversation| %>
+          <tr>
+            <td><%= link_to conversation.subject, conversation_path(conversation) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

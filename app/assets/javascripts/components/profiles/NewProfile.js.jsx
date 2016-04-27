@@ -39,10 +39,9 @@ class NewProfile extends React.Component {
 
   render() {
     return(
-      <div className="main-background">
+      <div className="main-background container">
         <div className="container col s12 m10 offset-m1">
           <br />
-          <h4>Create Profile</h4>
           <form onSubmit={this.addProfile} >
             <input placeholder="First Name" ref="first_name_one" required={true} />
             <input placeholder="Last Name" ref="last_name_one" required={true} />
@@ -54,7 +53,7 @@ class NewProfile extends React.Component {
             <input placeholder="Location (city, state)" ref="location" required={true} />
             <input placeholder="Profile picture link (any url will do)" ref="picture" required={true} />
 
-            <button className="btn">Create</button>
+            <button className="btn blue">Submit</button>
           </form>
           <br />
         </div>

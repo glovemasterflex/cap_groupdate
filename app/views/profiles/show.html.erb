@@ -19,12 +19,13 @@
   </div>
   <div class="row">
     <div class="col s6">
-      <button class="btn blue">Edit Profile</button>
+    <%= link_to "Edit Profile", edit_user_profile_path(@user_id, @profile.id), class:"btn blue" %>
     </div>
-      <button class="btn blue">Friends</button>
+      <button href="/users" class="btn blue">Friends</button>
   </div>
   <br/>
 
-<%= link_to "Delete Account?", user_path(current_user.id), method: :delete %>
+<%= link_to "Delete Account?", user_path(current_user.id), method: :delete, class:"btn red" %>
 
+<br/>
 </div>

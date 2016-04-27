@@ -1,16 +1,21 @@
-<h1><%= @conversation.subject %></h1>
+<div class='container main-background z-depth-2'>
+  <div class="container center">
+		<h3><%= @conversation.subject %></h3>
 
-<% @conversation.receipts_for(current_user).each do |receipt| %>
-  <div>
-    <h5 class='bold'><%= receipt.message.sender.name %> said:</h5>
-    <blockquote><%= receipt.message.body %></blockquote>
-  </div>
-<% end %>
+		<% @conversation.receipts_for(current_user).each do |receipt| %>
+		  <div>
+		    <h5 class='bold'><%= receipt.message.sender.name %> said:</h5>
+		    <blockquote class="message-background"><%= receipt.message.body %></blockquote>
+		  </div>
+		<% end %>
 
-<%= form_tag conversation_messages_path(@conversation), method: :post do %>
-  <div>
-    <%= text_area_tag :body %>
-  </div>
+		<%= form_tag conversation_messages_path(@conversation), method: :post do %>
+		  <div>
+		    <%= text_area_tag :body %>
+		  </div>
 
-  <%= submit_tag %>
-<% end %>
+		  <%= submit_tag 'Reply', class:"btn blue" %>
+		<% end %>
+		<br/>
+	</div>
+</div>
