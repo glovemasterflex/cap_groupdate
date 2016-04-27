@@ -7,7 +7,7 @@ class NewProfile extends React.Component {
   addProfile(e) {
     e.preventDefault();
     let user_id = this.props.user_id;
-    let id = this.props.profile.id;
+    let id = this.props.id;
     let first_name_one = this.refs.first_name_one.value;
     let last_name_one = this.refs.last_name_one.value;
     let first_name_two = this.refs.first_name_two.value;

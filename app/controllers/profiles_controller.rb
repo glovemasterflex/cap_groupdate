@@ -6,6 +6,7 @@ class ProfilesController < ApplicationController
 
   def show
     @user_id = current_user.id
+    @id = current_user.profile.id
   end
 
   def new
