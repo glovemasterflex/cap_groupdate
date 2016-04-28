@@ -14,6 +14,7 @@
         <% @conversations.each do |conversation| %>
           <tr>
             <td><%= link_to conversation.subject, conversation_path(conversation) %></td>
+            <td><%= link_to 'Delete?', conversation_path(conversation), method: :delete %>
           </tr>
         <% end %>
       </tbody>
