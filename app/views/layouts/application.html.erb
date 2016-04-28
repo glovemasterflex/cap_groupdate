@@ -83,9 +83,11 @@
           <h5 class="white-text">Useful Links</h5>
           <ul>
           <% if user_signed_in? %>
+            <% if current_user.profile %>
             <li><%= link_to 'Conversations', conversations_path, class:'grey-text text-lighten-3' %></li>
             <li><a class="grey-text text-lighten-3" href="/users">Find Friends</a></li>
             <li><%= link_to "Profile", user_profile_path(current_user.id, current_user.profile.id), class:"grey-text text-lighten-3" %></li>
+            <% end %>
           <% end %>
             <li><%= link_to 'About', about_path, class:'grey-text text-lighten-3'%></li>
           </ul>
